@@ -1,0 +1,30 @@
+{
+    "ts-node": {
+        "transpileOnly": true,
+        "compilerOptions": {
+            "allowJs": false,
+            "module": "UMD",
+            "target": "ES6"
+        }
+    },
+    "compilerOptions": {
+        "baseUrl": "src",
+        "allowJs": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "jsx": "react",
+        "module": "ESNext",
+        "noImplicitAny": true,
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "moduleResolution": "node",
+        "target": "ES5",
+        "typeRoots": ["types/index.d.js", "node_modules/@types"],
+        "outDir": "./dist"
+
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "./dist/**/*"]
+}
