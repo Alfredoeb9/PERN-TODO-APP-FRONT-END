@@ -34,7 +34,7 @@
     "build": "npm run build:app && npm run build:doc",
     "build:app": "webpack --config webpack-config/webpack.prod.js",
     "build:doc": "typedoc --tsconfig tsconfig.json",
-    "clean": "rm -rf dist && rm -rf node_modules",
+    "clean": "rm -rf dist && rm -rf node_modules && rm -rf package-lock.json",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
