@@ -3,11 +3,13 @@ const path = require('path')
 const { merge } = require('webpack-merge')
 const Dotenv = require('dotenv-webpack')
 const common = require('./webpack.common.js')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = merge(common, {
     mode: 'development',
     devtool: 'eval-cheap-source-map',
     plugins: [
+        new CleanWebpackPlugin(),
         new Dotenv({
             path: path.resolve(process.cwd(), '.env.dev'),
             safe: true

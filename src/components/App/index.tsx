@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 
 function App() {
-  const [tasks, setTasks] = useState(null);
+  const [tasks, setTasks] = useState<any>(null);
   const getData = async () => {
     const userEmail = 'alftest@test.com'
     try {
@@ -19,12 +19,12 @@ function App() {
   }, [tasks])
 
   // SORT BY DATE 
-  const sortedTasks = tasks?.sort((a,b) => new Date(a.date) - new Date(b.date))
+  const sortedTasks: any = tasks?.sort((a: any,b: any) => new Date(a.date).valueOf() - new Date(b.date).valueOf()) as unknown
 
   return (
     <div className="App">
       <h1>Barebones application built with React, Webpack, and babel </h1>
-      {sortedTasks?.map((task, i) => (
+      {sortedTasks?.map((task: any, i: number) => (
         <div key={task.id}>{task.title}</div>
       ))}
     </div>

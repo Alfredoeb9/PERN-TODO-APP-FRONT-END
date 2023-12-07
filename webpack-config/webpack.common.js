@@ -3,27 +3,27 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require("path");
 
 module.exports = {
-  entry: "./src/index.js",
-  output: { path: path.join(__dirname, "../dist") },
+  entry: "./src/index.tsx",
+  output: { 
+    publicPath: 'auto',
+    path: path.join(__dirname, "../dist") 
+  },
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
     modules: ['src', 'node_modules']
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
-          options:{
-            presets: ["@babel/preset-env", "@babel/preset-react"],
-          }
         },
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: ["style-loader", "css-loader", "postcss-loader"],
       },
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: 'asset/resource'

@@ -1,17 +1,15 @@
 {
-    "ts-node": {
-        "transpileOnly": true,
-        "compilerOptions": {
-            "allowJs": false,
-            "module": "UMD",
-            "target": "ES6"
-        }
-    },
     "compilerOptions": {
         "baseUrl": "src",
         "allowJs": true,
+        // Ensure that .d.ts files are created by tsc, but not .js files
+        "declaration": true,
+        // Tell Typescript to check types and not compile any files
+        "emitDeclarationOnly": true,
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
+        // Ensure that Babel can safely transpile files in the TypeScript project
+        "isolatedModules": true,
         "jsx": "react",
         "module": "ESNext",
         "noImplicitAny": true,
